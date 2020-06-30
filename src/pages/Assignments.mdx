@@ -1,0 +1,56 @@
+import {
+    Route,
+    Switch,
+} from 'react-router-dom'
+
+import {
+    Box,
+    Grid,
+    Paper
+} from '@material-ui/core'
+
+import {
+    GeneratedLink as Link
+} from '../common/GeneratedLink'
+
+import Overview from "../content/assignments/Overview.mdx"
+import Readings from "../content/assignments/Readings.mdx"
+import Project from "../content/assignments/Project.mdx"
+import StatisticsLab from "../content/assignments/StatisticsLab.mdx"
+import Exam from "../content/assignments/Exam.mdx"
+
+# Assignments
+
+<Grid container spacing={2}>
+    <Grid item xs={9}>
+        { /* TODO React Router v6 for Routes Component */ }
+        <Switch>
+            <Route exact path="/assignments">
+                <Overview />
+            </Route>
+            <Route path="/assignments/readings">
+                <Readings />
+            </Route>
+            <Route path="/assignments/project">
+                <Project />
+            </Route>
+            <Route path="/assignments/statisticslab">
+                <StatisticsLab />
+            </Route>
+            <Route path="/assignments/exam">
+                <Exam />
+            </Route>
+        </Switch>
+    </Grid>
+    <Grid item xs={3}>
+        { /* TODO Need a better way to present this secondary hierarchy */ }
+        <p><Link href="/assignments">Overview</Link></p>
+        <p><Link href="/assignments/readings">Readings</Link></p>
+        <p><Link href="/assignments/project">Project</Link></p>
+        <p><Link href="/assignments/statisticslab">Statistics Lab</Link></p>
+        <p><Link href="/assignments/exam">Exam</Link></p>
+    </Grid>
+</Grid>
+
+
+
