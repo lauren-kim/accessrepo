@@ -1,9 +1,9 @@
 import * as React from 'react';
-//import * as ReactDOM from 'react-dom';
 
 interface IProps {
     pic1: any;
     pic2: any;
+    pic3: any;
 }
 
 interface IState {
@@ -15,11 +15,12 @@ export class ScreenViewer extends React.Component<IProps, IState> {
     constructor(props: any) {
         super(props);
         
-        const screen1 = this.props.pic1; //string = require('../assets/images/james_photo.jpg');
-        const screen2 = this.props.pic2;//string = require('../assets/images/jina_photo.jpg');
+        const screen1: string = this.props.pic1; //require('../assets/images/james_photo.jpg');
+        const screen2: string = this.props.pic2; //require('../assets/images/jina_photo.jpg');
+        const screen3: string = this.props.pic3; //require('../assets/images/winnie_photo.jpg');
         this.state = {
             onIndex: 0,
-            screens: [screen1, screen2],
+            screens: [screen1, screen2, screen3],
         }
 
         this.onClickBack = this.onClickBack.bind(this);
